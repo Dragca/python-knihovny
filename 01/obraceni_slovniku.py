@@ -2,7 +2,7 @@
 # Použij dict comprehension
 
 def obrat_slovnik(slovnik):
-    ...
+    return
 
 
 # Napoveda:
