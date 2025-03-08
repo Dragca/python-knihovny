@@ -55,12 +55,12 @@ def money_transfer(from_account, to_account, amount):# převod penez
     print(f"Transfered {amount} Kč from account {from_account} to account {to_account}.")
 
 parser = argparse.ArgumentParser(description='bank transfer between accounts')
-parser.add_argument("--from", type=int, required=True, help="source account")
-parser.add_argument("--to", type=int, required=True, help="target account")
+parser.add_argument("--from", type=int, required=True, help="source account", dest="from_account")
+parser.add_argument("--to", type=int, required=True, help="target account", dest="to_account")
 parser.add_argument("--amount", type=float, required=True, help="amount to transfer")
 args = parser.parse_args()
 
 try:
-    money_transfer(getattr(args,"from"), getattr(args, "to"), args.amount)#protože jsem chtěla zkusit napsat kod anglicky a nemohla použít klíčové slovo from jako args.from, musela jsem použít getattr.
+    money_transfer(args.from_account, args.to_account, args.amount)
 except (ValueError, FileNotFoundError) as error:
     print(f'Error: {error}')
