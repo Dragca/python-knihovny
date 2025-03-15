@@ -17,12 +17,12 @@ kraje = [
     ['Zlínský kraj', '583 698']
 ]
 #1
-print("\n".join([kraj[0] for kraj in kraje])) # použila jsem při výpisu \n, aby byl každý kraj na samostatném řádku
+nazvy_kraju = [kraj[0] for kraj in kraje]
+print(nazvy_kraju) 
 
 #2
-print("\n".join([kraj[1].replace(' ', '') for kraj in kraje]))
-#3
-nazvy_kraju = [kraj[0] for kraj in kraje]
-pocty_obyvatel_kraju = [kraj[1] for kraj in kraje]
-print(nazvy_kraju)
+pocty_obyvatel_kraju = [int(kraj[1].replace(' ', '')) for kraj in kraje]
 print(pocty_obyvatel_kraju)
+#3
+kraje_seznamy = [nazvy_kraju, pocty_obyvatel_kraju]
+print(kraje_seznamy)
