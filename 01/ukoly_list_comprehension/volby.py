@@ -1,4 +1,4 @@
-# h1ttps://kodim.cz/czechitas/uvod-do-progr-2/bonusy/cykly-2/list-comprehension/volby
+# https://kodim.cz/czechitas/uvod-do-progr-2/bonusy/cykly-2/list-comprehension/volby
 # kandidáti 1, 2, 3, 4, 5
 hlasy = [
     [78774, 43179, 225111, 144799, 242854],
@@ -78,11 +78,13 @@ for kraj, vitez in zip(nazvy_kraju, vitez_kraje):
 volby_procenta = []
 
 for kraj in hlasy:
+    kraje_procenta = []
     for kandidat in kraj:
         vysledek = kandidat/sum(kraj)
         na_procenta = vysledek * 100
         zaokrouhlit_na_setiny = round(na_procenta, 2)
-        volby_procenta.append(zaokrouhlit_na_setiny)
+        kraje_procenta.append(zaokrouhlit_na_setiny)
+    volby_procenta.append(kraje_procenta)
 print(volby_procenta)
 
 # volby elegantně 
